@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cut & Curl - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f8f0e3; color: #333; text-align: center; }
+        header { background-color: #8B4513; color: white; padding: 15px; }
+        nav ul { list-style-type: none; padding: 0; }
+        nav ul li { display: inline; margin: 0 15px; }
+        nav ul li a { color: white; text-decoration: none; }
+        .hero { background-color: #DAA520; padding: 50px; color: white; }
+        .gallery-container { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+        .appointment { background-color: #fff; padding: 20px; margin: 20px auto; width: 50%; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); }
+        .appointment input, .appointment button { display: block; width: 100%; padding: 10px; margin-top: 10px; }
+        footer { background-color: #8B4513; color: white; padding: 10px; margin-top: 20px; }
+    </style>
+    <script>
+        function confirmBooking(event) {
+            event.preventDefault();
+            let name = document.querySelector('input[name="name"]').value;
+            let phone = document.querySelector('input[name="phone"]').value;
+            let date = document.querySelector('input[name="date"]').value;
+            let time = document.querySelector('input[name="time"]').value;
+            
+            if(name && phone && date && time) {
+                alert(`Thank you, ${name}! Your appointment is confirmed for ${date} at ${time}.`);
+            } else {
+                alert("Please fill all the details to book an appointment.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Cut & Curl</h1>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#appointment">Book Appointment</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home" class="hero">
+        <h2>Welcome to Cut & Curl</h2>
+        <p>Your beauty, our passion. Get the best styling & grooming experience.</p>
+    </section>
+    
+    <section id="services">
+        <h2>Our Services</h2>
+        <ul>
+            <li>Haircut & Styling</li>
+            <li>Facials & Skincare</li>
+            <li>Beard Grooming</li>
+            <li>Hair Coloring</li>
+        </ul>
+    </section>
+    
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <p>Our work speaks for itself.</p>
+        <div class="gallery-container">
+            <img src="style1.jpg" alt="Hair Style 1" width="150">
+            <img src="style2.jpg" alt="Hair Style 2" width="150">
+            <img src="style3.jpg" alt="Hair Style 3" width="150">
+        </div>
+    </section>
+    
+    <section id="appointment">
+        <h2>Book an Appointment</h2>
+        <div class="appointment">
+            <form onsubmit="confirmBooking(event)">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="tel" name="phone" placeholder="Your Phone" required>
+                <input type="date" name="date" required>
+                <input type="time" name="time" required>
+                <button type="submit">Book Now</button>
+            </form>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Visit us at: <strong>123 Street, City</strong></p>
+        <p>Call: <strong>+91 98765 43210</strong></p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Cut & Curl. All Rights Reserved.</p>
+    </footer>
+</body>
+</html
